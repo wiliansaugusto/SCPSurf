@@ -17,15 +17,15 @@ import java.util.Date;
 @AllArgsConstructor
 public class TipoUsuarioDTO {
 
-    private Long  id_tp_usuario;
+    private Long  idTpUsuario;
 
     @NotNull
     @Size(min=4, max = 100)
-    private String nm_tp_usuario;
+    private String nmTpUsuario;
 
-    private boolean is_ativo;
+    private boolean isAtivo;
 
-    private boolean is_adm;
+    private boolean isAdm;
 
     @NotNull
     private Date dt_alteracao;

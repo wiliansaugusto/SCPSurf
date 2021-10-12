@@ -17,40 +17,40 @@ public class Endereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id_endereco;
+    private  Long idEnderco;
 
     @Column
     @NotNull
-    private String nm_logradouro;
+    private String nmLogradouro;
 
     @Column
     @NotNull
-    private String num_logradouro;
+    private String numLogradouro;
 
     @Column
-    private String desc_complemento;
-
-    @Column
-    @NotNull
-    private String nm_bairro;
+    private String descComplemento;
 
     @Column
     @NotNull
-    private String nm_estado;
+    private String nmBairro;
 
     @Column
     @NotNull
-    private String nm_pais;
+    private String nmEstado;
+
+    @Column
+    @NotNull
+    private String nmPais;
 
     @Column
     @Digits(integer = 9, fraction = 0)
-    private int num_cep;
+    private int numCep;
 
     @Column
     @NotNull
-    private boolean is_ativo;
+    private boolean isAtivo;
 
     @Column
     @NotNull
-    private Date dt_alteracao;
+    private Date dtAlteracao;
 }

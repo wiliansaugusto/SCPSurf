@@ -13,19 +13,19 @@ public class TipoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  id_tp_usuario;
+    private Long  idTpUsuario;
 
     @Column(nullable = false)
-    private String nm_tp_usuario;
+    private String nmTpUsuario;
 
     @Column
-    private boolean is_ativo;
+    private boolean isAtivo;
 
     @Column
-    private boolean is_adm;
+    private boolean isAdm;
 
     @Column
-    private Date dt_alteracao;
+    private Date dtAlteracao;
 
 
 }
