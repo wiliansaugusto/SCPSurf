@@ -1,13 +1,13 @@
 package br.com.achei.scpsurf.entity;
 
+import br.com.achei.scpsurf.config.TpUsuarioEnum;
+import br.com.achei.scpsurf.mapper.UsuarioMapper;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
-@NoArgsConstructor  @AllArgsConstructor
 @Getter @Setter
 public class Usuario {
 
@@ -32,4 +32,7 @@ public class Usuario {
 
     @Column
     private String nomeCompleto;
+
+    @Column
+    private TpUsuarioEnum tpUsuario;
 }

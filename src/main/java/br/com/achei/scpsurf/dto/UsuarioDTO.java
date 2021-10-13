@@ -1,10 +1,13 @@
 package br.com.achei.scpsurf.dto;
 
+import br.com.achei.scpsurf.config.TpUsuarioEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -37,5 +40,7 @@ public class UsuarioDTO {
     @Size(min = 5, max = 45)
     private String nomeCompleto;
 
-
+    @NotNull
+    private TpUsuarioEnum tpUsuario;
+    //private long FKTpUsuario;
 }

@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum UsuarioEnum {
+public enum TpUsuarioEnum {
 
     ADM("Administrativo"),
     SHAPER("Shaper"),
