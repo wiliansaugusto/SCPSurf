@@ -20,7 +20,10 @@ public class UsuarioController {
     @Autowired
     private  UsuarioService usuarioService;
 
-
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<UsuarioDTO> findById(@PathVariable long id) throws Exception {
+        return ResponseEntity.ok(usuarioService.findById(id));
+    }
 
     @GetMapping(value = "/findall" , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UsuarioDTO>> findAll() throws UsarioExecptionExist {

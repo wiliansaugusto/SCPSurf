@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     @Query("select usuario from Usuario usuario where usuario.numCpf = :numCpf")
-    Optional<Usuario> FindByNumCpf(int numCpf);
+    Optional<Usuario> FindByNumCpf(Long numCpf);
 
 }

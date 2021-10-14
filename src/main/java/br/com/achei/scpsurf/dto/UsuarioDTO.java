@@ -1,10 +1,7 @@
 package br.com.achei.scpsurf.dto;
 
 import br.com.achei.scpsurf.config.TpUsuarioEnum;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
@@ -15,16 +12,20 @@ import java.util.Date;
 
 @Data
 @Builder
-@NoArgsConstructor @AllArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class UsuarioDTO {
 
     private Long idUsuario;
+
     @NotNull
     @Size(min = 3, max = 30)
     private String nmUsuario;
 
     @NotNull
-    @Min(value = 6)
+    @Size(min = 6)
     private String password;
 
     @NotNull
@@ -34,7 +35,7 @@ public class UsuarioDTO {
     private String descGenero;
 
     @NotNull
-    private int numCpf;
+    private Long numCpf;
 
     @NotNull
     @Size(min = 5, max = 45)
@@ -42,5 +43,8 @@ public class UsuarioDTO {
 
     @NotNull
     private TpUsuarioEnum tpUsuario;
+
+    @NotNull
+    private boolean isAtivo;
     //private long FKTpUsuario;
 }

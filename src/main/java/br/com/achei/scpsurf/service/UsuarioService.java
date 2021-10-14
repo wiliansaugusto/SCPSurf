@@ -32,11 +32,17 @@ public class UsuarioService {
     }
     @Transactional(readOnly = true)
     public List<UsuarioDTO> findAll() {
-        return (List<UsuarioDTO>) usuarioMapper.toDto((Usuario) usuarioRepository.findAll());
+        return  usuarioMapper.toDto(usuarioRepository.findAll());
     }
     @Transactional
     private void verifyIfIsAlreadyRegistered(UsuarioDTO usuarioDTO) throws UsarioExecptionExist {
         Optional<Usuario> optSavedUsuario = usuarioRepository.FindByNumCpf(usuarioDTO.getNumCpf());
         if (optSavedUsuario.isPresent()) throw new UsarioExecptionExist(String.valueOf(usuarioDTO.getNmUsuario()));
     }
+    @Transactional(readOnly = true)
+    public UsuarioDTO findById(long id) throws Exception {
+        return usuarioRepository.findById(id).map(usuarioMapper::toDto).orElseThrow(Exception::new);
+    }
+    //@Transactional
+    //private
 }
