@@ -1,10 +1,8 @@
 package br.com.achei.scpsurf.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import br.com.achei.scpsurf.config.TpContatoEnum;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -15,17 +13,20 @@ import javax.validation.constraints.Size;
 
 @Data
 @Builder
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class ContatoDTO {
 
     private Long idContato;
 
     @NotNull
-    private int tpContato;
+    private TpContatoEnum tpContato;
 
     @NotNull
-    @Size(min = 9, max = 100)
+    @Size(min = 9, max = 200)
     private String descContato;
 
-    private boolean isAtivo;
+    private int isAtivoContato;
 }

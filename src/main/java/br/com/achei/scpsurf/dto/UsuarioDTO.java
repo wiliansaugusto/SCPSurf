@@ -8,6 +8,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Data
@@ -45,6 +47,10 @@ public class UsuarioDTO {
     private TpUsuarioEnum tpUsuario;
 
     @NotNull
-    private boolean isAtivo;
+    private int isAtivoUsuario;
+
+    private ZonedDateTime dtAlteracao;
+
+
     //private long FKTpUsuario;
 }

@@ -1,5 +1,6 @@
 package br.com.achei.scpsurf.dto;
 
+import br.com.achei.scpsurf.config.EnderecoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 
@@ -32,21 +34,21 @@ public class EnderecoDTO {
     private String nmBairro;
 
     @NotNull
-    @Max(value = 30)
     private String nmEstado;
 
     @NotNull
-    @Max(value = 30)
     private String nmPais;
 
     @NotNull
-    @Min(value = 9)
-    private int numCep;
+    @Size(min = 8)
+    private String numCep;
 
-    private boolean isAtivo;
+    private int isAtivoRes;
+
+    private ZonedDateTime dtAlteracao;
 
     @NotNull
-    private Date dtAlteracao;
+    private EnderecoEnum tpEndereco;
 
 
 }

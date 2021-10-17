@@ -1,5 +1,6 @@
 package br.com.achei.scpsurf.entity;
 
+import br.com.achei.scpsurf.config.TpContatoEnum;
 import lombok.*;
 import org.hibernate.annotations.GeneratorType;
 
@@ -18,12 +19,13 @@ public class Contato {
 
     @Column
     @NotNull
-    private int tpContato;
+    private TpContatoEnum tpContato;
 
     @Column
     @NotNull
     private String descContato;
 
-    private boolean isAtivo;
+    @Column
+    private int isAtivoContato;
 
 }

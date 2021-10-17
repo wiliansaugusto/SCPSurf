@@ -1,11 +1,11 @@
 package br.com.achei.scpsurf.entity;
 
 import br.com.achei.scpsurf.config.TpUsuarioEnum;
-import br.com.achei.scpsurf.mapper.UsuarioMapper;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
@@ -40,6 +40,16 @@ public class Usuario {
     private TpUsuarioEnum tpUsuario;
 
     @Column
-    private boolean isAtivo;
+    private int isAtivoUsuario;
+
+    @Column(nullable = true)
+    private ZonedDateTime dtAlteracao;
+
+
+
+      public ZonedDateTime setDtAlteracao() {
+        return  this.dtAlteracao = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+    }
+
 
 }

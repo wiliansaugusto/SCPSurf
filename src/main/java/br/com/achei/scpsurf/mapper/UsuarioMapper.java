@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 @Component
 public class UsuarioMapper {
 
-    public List<UsuarioDTO> toDto(List<Usuario> listStock){
-        return listStock.stream().map(this::toDto).collect(Collectors.toList());
+    public List<UsuarioDTO> toDto(List<Usuario> listUsuario){
+        return listUsuario.stream().map(this::toDto).collect(Collectors.toList());
     }
 
     public UsuarioDTO toDto(Usuario usuario) {
@@ -23,7 +23,8 @@ public class UsuarioMapper {
         dto.setTpUsuario(usuario.getTpUsuario());
         dto.setPassword(usuario.getPassword());
         dto.setNumCpf(usuario.getNumCpf());
-
+        dto.setDtAlteracao(usuario.getDtAlteracao());
+        dto.setIsAtivoUsuario(usuario.getIsAtivoUsuario());
         return dto;
     }
     public Usuario toEntity(UsuarioDTO usuarioDTO){
@@ -37,6 +38,8 @@ public class UsuarioMapper {
         usuario.setTpUsuario(usuarioDTO.getTpUsuario());
         usuario.setPassword(usuarioDTO.getPassword());
         usuario.setNumCpf(usuarioDTO.getNumCpf());
+        usuario.setDtAlteracao(usuarioDTO.getDtAlteracao());
+        usuario.setIsAtivoUsuario(usuarioDTO.getIsAtivoUsuario());
         return usuario;
     }
 
