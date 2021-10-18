@@ -2,8 +2,6 @@ package br.com.achei.scpsurf.entity;
 
 import br.com.achei.scpsurf.config.TpContatoEnum;
 import lombok.*;
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 

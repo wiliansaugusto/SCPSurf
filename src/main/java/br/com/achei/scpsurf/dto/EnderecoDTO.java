@@ -1,10 +1,7 @@
 package br.com.achei.scpsurf.dto;
 
 import br.com.achei.scpsurf.config.EnderecoEnum;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -16,13 +13,16 @@ import java.util.Date;
 
 @Data
 @Builder
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class EnderecoDTO {
 
     private  Long idEndereco;
 
     @NotNull
-    @Size(min=4, max = 100)
+    @Size(min=3, max = 100)
     private String nmLogradouro;
 
     @NotNull
@@ -40,7 +40,7 @@ public class EnderecoDTO {
     private String nmPais;
 
     @NotNull
-    @Size(min = 8)
+    @Size(min = 9)
     private String numCep;
 
     private int isAtivoRes;

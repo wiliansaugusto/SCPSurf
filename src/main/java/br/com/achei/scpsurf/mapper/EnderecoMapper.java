@@ -32,19 +32,19 @@ public class EnderecoMapper {
     }
 
     public Endereco toEntity(EnderecoDTO enderecoDTO){
-        Endereco entity = new Endereco();
-        entity.setIdEndereco(enderecoDTO.getIdEndereco());
-        entity.setDescComplemento(enderecoDTO.getDescComplemento());
-        entity.setNmBairro(enderecoDTO.getNmBairro());
-        entity.setDtAlteracao(enderecoDTO.getDtAlteracao());
-        entity.setNmEstado(enderecoDTO.getNmEstado());
-        entity.setNmLogradouro(enderecoDTO.getNmLogradouro());
-        entity.setNmPais(enderecoDTO.getNmPais());
-        entity.setNumCep(enderecoDTO.getNumCep());
-        entity.setNumLogradouro(enderecoDTO.getNumLogradouro());
-        entity.setIsAtivoRes(enderecoDTO.getIsAtivoRes());
-        entity.setDescComplemento(enderecoDTO.getDescComplemento());
-        entity.setTpEndereco(enderecoDTO.getTpEndereco());
-        return entity;
+        Endereco endereco = new Endereco();
+        endereco.setIdEndereco(enderecoDTO.getIdEndereco());
+        endereco.setDescComplemento(enderecoDTO.getDescComplemento());
+        endereco.setNmBairro(enderecoDTO.getNmBairro());
+        endereco.setDtAlteracao(enderecoDTO.getDtAlteracao());
+        endereco.setNmEstado(enderecoDTO.getNmEstado());
+        endereco.setNmLogradouro(enderecoDTO.getNmLogradouro());
+        endereco.setNmPais(enderecoDTO.getNmPais());
+        endereco.setNumCep(enderecoDTO.getNumCep());
+        endereco.setNumLogradouro(enderecoDTO.getNumLogradouro());
+        endereco.setIsAtivoRes(enderecoDTO.getIsAtivoRes());
+        endereco.setDescComplemento(enderecoDTO.getDescComplemento());
+        endereco.setTpEndereco(enderecoDTO.getTpEndereco());
+        return endereco;
     }
 }
