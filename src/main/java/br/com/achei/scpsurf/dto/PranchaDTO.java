@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Data
@@ -14,13 +16,20 @@ import java.util.Date;
 public class PranchaDTO {
 
     private Long idPrancha;
+    @NotNull
     private int tpFase;
+    @NotNull
     private String tpPrancha;
+    @NotNull
     private double largura;
+    @NotNull
     private double espessura;
+    @NotNull
     private double comprimento;
+    @NotNull
     private double litragem;
-    private Date dtAlteracao;
-    private Long regPrancha;
+
+    private ZonedDateTime dtAlteracao;
+    private String regPrancha;
 
 }

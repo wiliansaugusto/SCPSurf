@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Data
@@ -34,10 +36,20 @@ public class Prancha {
     @Column
     private double litragem;
 
-    @Column
-    private Date dtAlteracao;
+    @Column(nullable = true)
+    private ZonedDateTime dtAlteracao;
 
-    @Column
-    private Long regPrancha;
+    @Column(nullable = true)
+    private String regPrancha;
+
+
+
+    public ZonedDateTime setDtAlteracao() {
+        return  this.dtAlteracao = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+    }
+    public String setRegPrancha(){
+          ZonedDateTime dt = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+          return  dt.format(DateTimeFormatter.ofPattern("YYYYMM"));
+    }
 
 }
