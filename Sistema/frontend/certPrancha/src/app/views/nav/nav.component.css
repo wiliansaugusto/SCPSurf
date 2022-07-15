@@ -1,0 +1,62 @@
+.navegador {
+    overflow-x: hidden;
+    background-color: white !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.linksNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: safe;
+    align-content: baseline;
+}
+
+.linkNavegador {
+    text-decoration: none;
+    color: black;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: safe;
+    align-content: baseline;
+}
+
+.linksNav mat-icon {
+    margin-right: 5px;
+    margin-top: -0.0625rem;
+    margin-left: 10px;
+}
+
+.iconMenu {
+    color: rgb(0, 0, 0);
+    vertical-align: bottom;
+}
+
+.figure-img {
+    width: 7.5rem;
+    height: auto;
+    padding-top: 0.4375rem;
+    margin-left: 1.5625rem;
+}
+
+@media screen and (max-width:600px) {
+    .figure-img {
+        height: 6%;
+        padding-top: 0.4375rem;
+    }
+    .navbar-toggler {
+        margin-right: 1.5625rem;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+    .linksNav {
+        margin-top: 15px;
+    }
+}

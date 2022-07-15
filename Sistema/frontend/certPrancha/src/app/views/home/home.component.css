@@ -1,0 +1,93 @@
+.imagem {
+    background-image: url('../../../assets/img/homem_surfando.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: 500px;
+}
+
+.imagem1 {
+    background-image: url('../../../assets/img/fabricando_prancha_surf.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.imagemFluxoNova {
+    background-image: url('../../../assets/img/pranchas_nova.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.imagemFluxoSeminova {
+    background-image: url('../../../assets/img/pranchas_seminovas.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.container {
+    margin-top: 0.9375rem;
+}
+
+p {
+    text-align: justify;
+}
+
+
+/* As Proximas 3  são relativas ao video do youtube*/
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.embed-responsive.embed-responsive-16by9 {
+    padding-bottom: 56.25%;
+}
+
+.embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width:800px) {
+    .imagem {
+        background-image: url('../../../assets/img/mob_menina_surfando.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .imagem1 {
+        background-image: url('../../../assets/img/mob_shapper_prancha.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .corpoHome {
+        padding: 0;
+    }
+    .imagemFluxoNova {
+        background-image: url('../../../assets/img/pranchas_nova_mob.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+    }
+    .imagemFluxoSeminova {
+        background-image: url('../../../assets/img/pranchas_semi_mob.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}

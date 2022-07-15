@@ -1,0 +1,19 @@
+.tituloSite {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 3.125rem;
+}
+
+.figura {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+.paragrafo2 {
+    margin-left: 20%;
+    margin-right: 10%;
+    text-align: justify;
+}

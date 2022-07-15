@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    margin-top: 0.9375rem;
+    margin-bottom: 1.5625rem;
+}
+
+form {
+    color: rgb(0, 0, 0);
+}

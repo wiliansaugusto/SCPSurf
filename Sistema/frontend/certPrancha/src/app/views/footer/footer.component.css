@@ -1,0 +1,26 @@
+.row {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    padding-top: 5px;
+    padding: 0.9375rem;
+}
+
+.direito {
+    text-align: end;
+}
+
+footer {
+    margin-top: 1.5625rem;
+    width: 100%;
+}
+
+@media screen and (max-width:600px) {
+    .direito,
+    .row {
+        text-align: center;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <form action="https://formsubmit.co/f1b0816725ba3ade49b1c14cdc2fa7db" method="POST">
+        <h2>Contato</h2>
+        <input type="hidden" name="_subject" value="Contato pelo Site">
+        <input type="hidden" name="_cc" value="wiliansaugusto@gmail.com">
+        <input type="hidden" name="_next" value="http://localhost:4200/thanks">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input required type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+        </div>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="number" class="form-control" id="telefone" name="telefone" placeholder="(DDD)9.9999-9999" pattern="^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input required type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea required class="form-control" id="mensagem" name="mensagem" rows="4"></textarea>
+        </div>
+        <button type="button" class="btn btn-success" type="submit">Enviar</button>
+    </form>
+</div>
