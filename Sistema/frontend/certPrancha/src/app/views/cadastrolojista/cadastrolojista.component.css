@@ -1,0 +1,110 @@
+.form-loja-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-end {
+    margin-right: 15px;
+    width: 100%;
+}
+
+.form-end-cep {
+    max-width: 21.875rem;
+}
+
+.form-log-end {
+    width: 200%;
+    margin-right: 15px;
+}
+
+.form-full-width {
+    width: 100%;
+}
+
+.button {
+    background-color: black;
+    color: orangered;
+}
+
+.bloco {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-tabs {
+    width: 100%;
+}
+
+.lado-esq {
+    width: 70%;
+}
+
+.img-thumbnail {
+    height: 160px;
+}
+
+.lado-dir {
+    margin-left: 0.625rem;
+    width: 40%;
+    height: fit-content;
+}
+
+.form {
+    margin-top: 1.25rem;
+}
+
+.formRadio {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 65%;
+}
+
+.formRadioBtn mat-radio-button {
+    align-items: baseline;
+    margin-right: 15px;
+}
+
+.msgShaper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.corpoShapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.listShapper {
+    padding: 25px;
+}
+
+.listNone {
+    list-style: none;
+}
+
+.propietario {
+    width: 65%;
+    list-style: none;
+}
+
+.propietario li {
+    width: 65%;
+    list-style: none;
+}
+
+@media screen and (max-width:430px) {
+    .form-loja-end {
+        flex-direction: column;
+    }
+    .form-log-end {
+        width: 100%;
+    }
+    .bloco {
+        flex-direction: column;
+    }
+    .lado-dir {
+        width: fit-content;
+    }
+}

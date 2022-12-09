@@ -1,0 +1,28 @@
+.card {
+    display: inline;
+    position: fixed;
+    right: 20%;
+    top: 40%;
+    width: 60%;
+}
+
+.card-header {
+    font-size: larger;
+    font-weight: 900;
+    padding-top: 0.9375rem;
+    background-color: rgb(0, 0, 0);
+    color: #ed8425;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-full-width {
+    width: 80%;
+}
+
+.button {
+    background-color: #000000;
+    color: #ed8425;
+}

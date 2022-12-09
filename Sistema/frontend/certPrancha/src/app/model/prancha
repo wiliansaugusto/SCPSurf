@@ -1,0 +1,49 @@
+class Prancha {
+    id: number;
+    nomeComprador: string;
+    altura: number;
+    peso: number;
+    expertise: string;
+    cpf: string;
+    modelo: string;
+    lenght: number;
+    width: number;
+    trickness: number;
+    volume: number;
+    quilhas: string;
+    tpQuilhas: string;
+    glass: string;
+    tpGlass: string;
+    acabamentoPintura: string;
+    material: string;
+    obsPrancha: string;
+
+
+
+
+    constructor(id: number, nomeComprador: string, altura: number, peso: number, expertise: string,
+        cpf: string, modelo: string, lenght: number, width: number, trickness: number, volume: number,
+        quilhas: string, tpQuilhas: string, glass: string, tpGlass: string, acabamentoPintura: string,
+        material: string, obsPrancha: string) {
+
+        this.id = id
+        this.nomeComprador = nomeComprador
+        this.altura = altura
+        this.peso = peso
+        this.expertise = expertise
+        this.cpf = cpf
+        this.modelo = modelo
+        this.lenght = lenght
+        this.width = width
+        this.trickness = trickness
+        this.volume = volume
+        this.quilhas = quilhas
+        this.tpQuilhas = tpQuilhas
+        this.glass = glass
+        this.tpGlass = tpGlass
+        this.acabamentoPintura = acabamentoPintura
+        this.material = material
+        this.obsPrancha = obsPrancha
+    }
+
+}

@@ -1,67 +1,100 @@
-<div>
-    <ngb-carousel>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-                <div class="imagem"></div>
-            </div>
-            <div class="carousel-caption">
-            </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-                <div class="imagem1 "></div>
-            </div>
-            <div class="carousel-caption">
-            </div>
-        </ng-template>
-    </ngb-carousel>
-</div>
-<!--Parte do corpo do home-->
-<div class="row corpoHome">
-    <div class="col-lg-2 col-sm-12"></div>
-    <div class="col-lg-8 col-sm-12 container">
-        <h3>Salve salve galera do Surf, Aloha!!!</h3>
-        <p>Se você quiser conhecer a história legal vamos juntos, mas se só quiser saber sobre o produto <a href="#produto"> clique aqui</a></p>
-        <p>Meu pai um aprendeu a surfar aos 40 anos depois de uns problemas cardíacos, e foi ótimo para a vida e nessa jornada ele vem sempre adquirindo novas pranchas como todo surfista.</p>
-        <p>E eu filhão, analista de sistema criei um sistema que mantém os dados médicos do meu pai, ele escaneia um QRCode e envia para uma página com os dados médico dele, se quiser conhecer melhor esse produto é o <a target="_blank" href="https://achei.digital">ACHEI DIGITAL.</a></p>
-        <p>Na ultima prancha que ele comprou, ele colou um QRCode em baixo da camada da resina. Ficou top! O shapper pirou na ideia, e eu percebi que ali poderia nascer um novo produto!</p>
-    </div>
-    <div class="col-lg-2 col-sm-12"></div>
-</div>
-<!--Sobre o Produto-->
-<div class="row corpoHome">
-    <div class="col-lg-2 col-sm-12"></div>
-    <div class="col-lg-8 col-sm-12 container">
-        <h3 id="produto">Como funciona o CertPrancha?</h3>
-        <p>Você surfista já presenciou ou teve a sua prancha de surf roubada, e depois de algum tempo reencontrou ela em algum outro pico? E não tem como provar que a prancha é sua? Ou até mesmo a pessoa que comprou não sabia que era roubada, comprou de
-            um loja pequena, ou de alguém que ele não sabia que não era idôneo.</p>
-        <p>Durante a confecção da prancha o shapper vai inserir um qrcode na camada abaixo da camada de resina, isso garante que para a retirada do qrcode, o mesmo vai ter que cortar a resina, ou pintar a resina , enfim para o bandido que tentar roubar a
-            sua prancha, ele se deparará com o problema que antes ele não tinha.</p>
-        <p>Então toda a vez que a prancha mudar de propriedade, terá que fazer a transferência da prancha, se Zé vendou pra Mané ou se A loja do Chiquinho vendou para a Gabi, o nosso sistema irá certificar quem é o último proprietário daquela prancha.</p>
-        <p>E futuramente se algo ocorrer você pode provar que aquela prancha é sua!</p>
-    </div>
-    <div class="col-lg-2 col-sm-12"></div>
-</div>
-<!--Imagens relativas ao fluxo do sistema-->
+<div class="row">
+    <div class="col-sm-12 col-lg"></div>
+    <div class="col-sm-12 col-lg-8">
 
-<div class="imagemFluxoNova"></div>
-<div class="imagemFluxoSeminova"></div>
+        <h3>Olá sejá bem vindo(a) ao <strong> CertPrancha</strong></h3>
+        <p>O nosso sistema irá te ajudar a certificar os dados da sua prancha de surf!</p>
+        <p>Ninguém deseja ter um prancha perdida ou até mesmo roubada, e também não deseja ser enganado e comprar um produto roubado sem saber da verdade.</p>
+        <p>Iremos colocar luz aonde há escuridão! </p>
+        <p>As transações de compra e venda de pranchas ficaram muito mais seguras!</p>
+        <p>Você vai escanear o QrCode que vai estar embaixo da camada de resina da prancha e verificar a propiedade da prancha simple assim</p>
 
-<!--Ultimo espaço para textos-->
-<div class="row corpoHome">
-    <div class="col-lg-2 col-sm-12"></div>
-    <div class="col-lg-8 col-sm-12 container">
-        <p>E se você ainda desacredita que é importante o QRCode para a segurança da sua prancha, segue umas materias para você dar uma conferida aí</p>
-        <p>
-            <a target="_blank" href="https://surftotal.com/noticias/nacionais/item/20254-4-cidadaos-estrangeiros-apanhados-em-flagrante-a-roubar-pranchas-em-cascais">Roubo de pranha em cascais</a>
-        </p>
-        <p>
-            <a target="_blank" href="https://noticias.r7.com/rio-de-janeiro/rj-no-ar/videos/campea-de-surfe-tem-prancha-roubada-na-zona-oeste-do-rio-de-janeiro-21102015">Campeã de Surf tem Prancha roubada</a>
-        </p>
-        <p>E se preferir tem um video do Youtube</p>
-        <div class="embed-responsive embed-responsive-16by9">
-            <youtube-player class=" embed-responsive-item " player-width="'100%'" [height]="250" videoId="6wBBj8_cNao" suggestedQuality="default" [startSeconds]="0"></youtube-player>
+    </div>
+    <div class="col-sm-12 col-lg"></div>
+</div>
+
+<div class="row firsLine">
+    <h3>Serviços</h3>
+    <div class="col-lg-1 col-sm-12">
+    </div>
+    <!-- Certificado de propietário da prancha permitira que um usuário atraves de um numero
+consiga verificar a propiedade da prancha -->
+    <div class="col-lg-5 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Certificado de propiedade
+            </div>
+            <div class="card-body">
+                <p>Insira o numero da propiedade da prancha</p>
+                <form [formGroup]="propiedadeForm" #propiedadeFormDirective="ngForm" class="login-form">
+                    <div class="flex-login">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>ID Propiedade</mat-label>
+                            <input class="inputLogin" matInput type="text" required formControlName="idPropiedade" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <button mat-flat-button class="btnPropiedade" type="submit" (click)="verificarPropiedade()">Verificar Propiedade</button>
+
+                </form>
+
+            </div>
+            <div class="card-action">
+                <div class="alertas">
+                    <p *ngIf="mensagemPropiedade.id == '0'">
+                        <ngb-alert type='danger' [dismissible]="false">
+                            {{mensagemPropiedade.mensagem}}
+                        </ngb-alert>
+                    </p>
+                    <p *ngIf="mensagemPropiedade.id == '1'">
+                        <ngb-alert type='info' [dismissible]="false">
+                            {{mensagemPropiedade.mensagem}}
+                        </ngb-alert>
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="col-lg-2 col-sm-12"></div>
+    <!--
+      Transferência de propiedade
+     -->
+    <div class="col-lg-5 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Transferência de propiedade
+            </div>
+            <div class="card-body">
+                <p>Você precisar enviar os seus documentos para analise e se cadastrar no site!</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <!-- Lista de shapers que trabalham com o nosso produto! -->
+
+    <div class="col-lg-12 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Shappers e Lojas Certificados
+            </div>
+            <div class="card-body">Lista de Shappers e lojas diferenciadas!
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos corrupti laboriosam consequuntur ducimus asperiores voluptatibus, voluptatem voluptas sit, nulla incidunt ratione obcaecati sunt provident ipsa fuga exercitationem
+                        consectetur hic?</li>
+                    <li>Ratione facere praesentium nam temporibus natus atque harum accusantium nesciunt exercitationem, dolor illo quia, maxime sit quod veniam non fuga corporis aliquam blanditiis saepe? Quia dignissimos corrupti saepe dicta. Provident?</li>
+                    <li>Delectus dolorem, optio quidem voluptatem itaque maxime ab cumque cupiditate sint tenetur error sit doloremque est quisquam obcaecati cum atque aperiam repudiandae saepe accusantium odit velit. Minus nihil labore eligendi!</li>
+                    <li>Quisquam, quibusdam ut, cupiditate quia commodi eveniet at dicta ex deleniti consequuntur et nulla obcaecati velit corporis mollitia tempora accusantium nostrum magnam est, rerum odit? Molestias sint sunt commodi sed!</li>
+                    <li>Repellat quo perspiciatis maxime, animi itaque quisquam quasi, esse saepe asperiores fugit, suscipit ducimus consequuntur repudiandae corporis dolor unde similique. Ullam assumenda exercitationem officia accusamus aspernatur, fugit
+                        corrupti a nesciunt?</li>
+                    <li>Eius esse iusto et? Distinctio at veritatis magnam ex modi? Cupiditate, nemo minus maxime molestias qui sunt consequatur ducimus cumque laborum est! Quam magni ducimus dolores consequatur et veniam quisquam.</li>
+                    <li>Reiciendis optio, hic laudantium, ipsum nostrum ipsa quaerat illo iusto dolor quia debitis velit atque doloribus sint officiis quod? Reiciendis quo dolor mollitia eveniet nobis deleniti? Quaerat fugiat architecto obcaecati!</li>
+                    <li>Laborum, doloremque quisquam voluptates a itaque architecto repellat possimus quae reprehenderit quasi, similique non illum soluta. Consequuntur dolorum, odio ipsam quisquam maxime at, ipsum magnam accusamus ipsa soluta itaque animi.</li>
+                    <li>Illum, esse ad. Sequi consequatur recusandae ullam iusto rem atque aliquam debitis molestias sunt! Dolore quos eligendi atque deserunt dignissimos error animi quasi commodi consectetur enim repudiandae molestias, ipsum similique!</li>
+                    <li>Illum quo illo autem facere cupiditate reprehenderit eos? Quis, eos? Reprehenderit, beatae debitis? Tempore, dolor eaque! Possimus blanditiis maxime inventore culpa architecto laboriosam, aliquid reprehenderit, suscipit ratione aliquam
+                        perspiciatis et!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { SnackBarServiceService } from './../../services/snack-bar-service.service';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,35 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomeComponent implements OnInit {
 
-
-  images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
-  constructor(config: NgbCarouselConfig) {
-    // customize default values of carousels used by this component tree
-    config.interval = 5000;
-    config.wrap = true;
-    config.keyboard = true;
-    config.pauseOnHover = true;
+  propiedadeMock={
+    id:'78541200'
   }
+  mensagemPropiedade={
+    id:'',
+    mensagem:''
+  };
+
+  public propiedadeForm!:FormGroup;
+  @ViewChild("propiedadeFormDirective") loginFormGroupDirective !: FormGroupDirective;
+  
+  constructor(private form: FormBuilder, private snack: SnackBarServiceService) { }
 
   ngOnInit(): void {
+    this.propiedadeForm = this.form.group({
+      idPropiedade:['']
+    })
   }
+  verificarPropiedade(){
+    if(this.propiedadeForm.value['idPropiedade'] == this.propiedadeMock.id){
+      this.mensagemPropiedade.mensagem = "Encontrado(a) o propietário da prancha"
+      this.mensagemPropiedade.id='1';
+    }else{
+        this.snack.showSnackBar("Não encontrada a propiedade", "OK")
+        this.propiedadeForm.reset();
+        this.mensagemPropiedade.mensagem = "Não encontrada a propiedade da prancha"
+        this.mensagemPropiedade.id='0';
 
+    }
+
+  }
 }

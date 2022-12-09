@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-sm-12 col-lg-12 colorHead">
+        <h1>Bem vindo {{shapper.name}}</h1>
+    </div>
+</div>
+<div class="row colorBody">
+    <div class="col-sm-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                Ações
+            </div>
+            <div class="card-body">
+                <button mat-flat-button color="primary">
+                    <mat-icon>add</mat-icon> Nova Prancha
+                </button>
+                <button mat-flat-button color="primary">
+                    <mat-icon>check</mat-icon> Orçamento
+                </button>
+                <div>
+                    <form [formGroup]="searchClient" #searchClientFormDirective="ngForm" class="login-form">
+                            <mat-form-field class="form-full-width" appearance="outline">
+                                <mat-label>Pesquisar Clientes  <mat-icon>search</mat-icon> </mat-label>
+                                <input #clienteSearch class="inputLogin" matInput type="text" formControlName="clienteSearch" name="clienteSearch"  title="Nome ou id cliente">
+                            </mat-form-field>
+                    
+                    </form>
+            </div>
+            </div>
+            <div class="card-action">
+
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Orçamentos em aberto
+            </div>
+        <div class="card-body">
+            <ul *ngFor="let cliente of clientesOrcamento">
+                <li>{{cliente.nome}} - {{cliente.idade}} anos</li>
+                <li>{{cliente.orcamento.tpPrancha}} - {{cliente.orcamento.tamanho}} - {{cliente.orcamento.valor}} </li>
+           <li>    <a href="https://api.whatsapp.com/send?phone=55{{cliente.contato.whats}}" target="_blank" rel="noopener noreferrer">
+
+            <button mat-flat-button color="primary">
+                <mat-icon>mark_chat_read</mat-icon> Whatsapp - {{cliente.contato.whats}}
+            </button></a>
+            <a href="mailto:{{cliente.contato.email}}" target="_blank" rel="noopener noreferrer">
+
+                <button mat-flat-button color="primary">
+                    <mat-icon>email</mat-icon> Email - {{cliente.contato.email}}
+                </button></a>
+            </li>
+                <li>
+                <div class="card-action">
+                    <button mat-flat-button color="primary">
+                        <mat-icon>finished</mat-icon> Finalizar orçamento
+                    </button>
+                </div>
+                
+            </ul>
+        </div>  
+    </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+        <div *ngIf="searchClient.touched "  ng-focus class="card">
+            <h3>Clientes pesquisados</h3>
+            {{searchClient.value['clienteSearch']}}
+            <p>trazer os clientes pesquisados, orçamentos ou pranchas
+                
+            </p>
+        </div>
+          
+          
+
+      
+       
+    </div>
+</div>

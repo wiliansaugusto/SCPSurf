@@ -1,17 +1,20 @@
-import { ThanksComponent } from './core/thanks/thanks.component';
-import { ContatoComponent } from './core/contato/contato.component';
-import { QuemComponent } from './views/quem/quem.component';
+import { DashboardShapperComponent } from './views/dashboard-shapper/dashboard-shapper.component';
+import { CadastrolojistaComponent } from './views/cadastrolojista/cadastrolojista.component';
+import { CadastroshaperComponent } from './views/cadastroshaper/cadastroshaper.component';
+import { ShappersComponent } from './views/shappers/shappers.component';
+import { LoginComponent } from './views/login/login.component';
+import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './views/home/home.component';
-import { PoliticaComponent } from './views/politica/politica.component';
+
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'contato', component:ContatoComponent},
-  {path:'thanks', component:ThanksComponent},
-  {path:'quem', component:QuemComponent},
-  {path:'politica', component:PoliticaComponent},
+  {path:"", component:HomeComponent},
+  {path:"login", component:LoginComponent},
+  {path:"shappers", component:ShappersComponent},
+  {path:"cadastrarlojista", component:CadastrolojistaComponent},
+  {path:"cadastroshapper", component:CadastroshaperComponent},
+  {path:"dashboardshapper", component:DashboardShapperComponent},
 
 
 ];

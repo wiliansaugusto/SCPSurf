@@ -1,0 +1,47 @@
+<!-- Página usada para o cadastramento do Shapper -->
+
+<div class="row">
+    <div class="col-sm-12 col-lg"></div>
+    <div class="col-sm-12 col-lg-8">
+
+        <form [formGroup]="shapperForm" #shapperFormDirective="ngForm" class="form">
+            <div class="fotoShapper">
+                <img *ngIf="imgResult" class="img-thumbnail img" [src]="imgResult" alt="Imagem topo do card">
+
+                <div>
+                    <mat-label>Imagem do Shapper</mat-label>
+                    <input type="file" formControlName="img_thumb" accept="image/*" class="form-control" id="inputGroupFile01" (change)="selectedFiles($event)">
+                </div>
+            </div>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>Nome do Responsável</mat-label>
+                <input class="inputLogin" matInput type="text" formControlName="nomeShapper" title="Insira o seu nome">
+            </mat-form-field>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input (focusout)="validarCPF($event)" mask="000.000.000 - 00" class="inputLogin" matInput type="text" formControlName="CPF" title="Insira se CPF">
+            </mat-form-field>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input mask="(00)0000 - 0000 || (00) 0.0000 - 0000" class="inputLogin" matInput type="text" formControlName="telefone" title="Insira o seu telefone">
+            </mat-form-field>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>Data de Nascimento</mat-label>
+                <input mask="00/00/0000" class="inputLogin" matInput type="text" formControlName="dataNascimento" title="Insira sua data de nascimento">
+            </mat-form-field>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>Nome de Usuário</mat-label>
+                <input class="input-text" matInput type="text" formControlName="nomeUsuario" title="Seu nome de usuario">
+            </mat-form-field>
+            <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input class="input-text" matInput type="password" formControlName="shapperPswd" title="Sua senha">
+            </mat-form-field>
+
+            <button mat-flat-button class="button" type="submit" (click)="onSubmit()">Cadastrar Shapper</button>
+
+        </form>
+
+    </div>
+    <div class="col-sm-12 col-lg"></div>
+</div>

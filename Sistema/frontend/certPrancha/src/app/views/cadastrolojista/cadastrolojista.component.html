@@ -1,0 +1,270 @@
+<!-- Cadastro de lojista e shappers -->
+<!-- Pagina para o cadastro de lojistas fazemos também um cadastro inicial dos shaper que irão
+receber por email o concluir o cadastro!
+-->
+<div class="row">
+    <div class="col-sm-12 col-lg"></div>
+    <div class="col-sm-12 col-lg-10">
+        <input hidden matInput type="number" [formControl]="selected">
+        <h3>Cadastro de lojista</h3>
+        <mat-tab-group mat-align-tabs="start" [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">>
+            <mat-tab [label]="tabs[0]">
+                <form [formGroup]="lojaForm" #lojaFormDirective="ngForm" class="form">
+                    <div class="bloco">
+                        <div class="lado-esq">
+                            <div class="form-loja">
+                                <mat-form-field class="form-full-width" appearance="outline">
+                                    <mat-label>Nome do Responsável</mat-label>
+                                    <input class="inputLogin" matInput type="text" formControlName="nomePropietario" title="Insira o seu email">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-loja">
+                                <mat-form-field class="form-full-width" appearance="outline">
+                                    <mat-label>Email Proprietário </mat-label>
+                                    <input class="inputLogin" matInput type="email" formControlName="emailProrietario" title="Insira o seu email">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-loja">
+                                <mat-form-field class="form-full-width" appearance="outline">
+                                    <mat-label>CPF</mat-label>
+                                    <input mask="000.000.000 - 00" class="inputLogin" matInput type="text" formControlName="CPF" title="Insira o seu email">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-loja">
+                                <mat-form-field class="form-full-width" appearance="outline">
+                                    <mat-label>Telefone</mat-label>
+                                    <input mask="(00)0000 - 0000 || (00) 0.0000 - 0000" class="inputLogin" matInput type="text" formControlName="telefone" title="Insira o seu email">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-loja">
+                                <mat-form-field class="form-full-width" appearance="outline">
+                                    <mat-label>Data de Nascimento</mat-label>
+                                    <input mask="00/00/0000" class="inputLogin" matInput type="text" formControlName="dataNascimento" title="Insira o seu email">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="lado-dir">
+                            <img *ngIf="imgResult" class="img-thumbnail" [src]="imgResult" alt="Imagem topo do card">
+
+                            <div class="flex-clmn">
+                                <mat-label>Logo da empresa</mat-label>
+                                <input type="file" formControlName="img_thumb" accept="image/*" class="form-control" id="inputGroupFile01" (change)="selectedFiles($event)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-loja">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Nome Comercial</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="nomeComercial" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-loja">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Nome Fantasia</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="nomefantasia" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-loja">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Email comercial</mat-label>
+                            <input class="inputLogin" matInput type="email" formControlName="emailComercial" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-loja">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>CNPJ</mat-label>
+                            <input mask="00.000.000/0000-00" class="inputLogin" matInput type="text" formControlName="CNPJ" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <hr>
+                    <h3>Endereço comercial</h3>
+                    <hr>
+                    <div class="form-loja-end">
+                        <mat-form-field class="form-end-cep" appearance="outline">
+                            <mat-label>CEP</mat-label>
+                            <input mask="00000-000" (focusout)="buscaCEP($event)" class="inputLogin" matInput type="text" formControlName="CEP" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-loja-end">
+                        <mat-form-field class="form-log-end" appearance="outline">
+                            <mat-label>Logradouro</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="logradouro" title="Insira o seu email">
+                        </mat-form-field>
+                        <mat-form-field class="form-end" appearance="outline">
+                            <mat-label>Numero</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="numeroResidencia" title="Insira o seu email">
+                        </mat-form-field>
+                        <mat-form-field class="form-end" appearance="outline">
+                            <mat-label>Complemento </mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="complementoResidencia" title="Insira o seu email">
+                        </mat-form-field>
+
+                    </div>
+                    <div class="form-loja-end">
+                        <mat-form-field class="form-end" appearance="outline">
+                            <mat-label>Bairro</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="bairro" title="Insira o seu email">
+                        </mat-form-field>
+                        <mat-form-field class="form-end" appearance="outline">
+                            <mat-label>Cidade</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="cidade" title="Insira o seu email">
+                        </mat-form-field>
+                        <mat-form-field class="form-end" appearance="outline">
+                            <mat-label>Estado </mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="estado" title="Insira o seu email">
+                        </mat-form-field>
+
+                    </div>
+                    <hr>
+                    <h3>Dados de login</h3>
+                    <hr>
+                    <div class="form-loja">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Nome de Usuário</mat-label>
+                            <input class="input-text" matInput type="text" formControlName="nmUsuario" title="Sua senha">
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input class="input-text" matInput type="password" formControlName="pswd" title="Sua senha">
+                        </mat-form-field>
+                    </div>
+                    <button mat-flat-button class="button" type="submit" (click)="onSubmitLoja()">Cadastrar Shapper</button>
+
+                </form>
+            </mat-tab>
+            <mat-tab [label]="tabs[1]">
+                <div class="corpoShapper">
+                    <div class="formRadio">
+                        <form [formGroup]="shaperForm" #shaperFormDirective="ngForm" class="form">
+                            <p>O proprietário da loja também é um shapper? </p>
+                            <mat-radio-group class="formRadioBtn" formControlName="shaperSim">
+                                <mat-radio-button value="1">Somente eu</mat-radio-button>
+                                <mat-radio-button value="2">Eu e mais gente</mat-radio-button>
+                                <mat-radio-button value="3">Não</mat-radio-button>
+                            </mat-radio-group>
+                            <div class="msgShaper">
+                                <p class="alert" *ngIf="shaperForm.value['shaperSim'] == 1">
+                                    <ngb-alert type='success' [dismissible]="false" checked>
+                                        <mat-icon>thumb_up</mat-icon>
+                                        &nbsp; Usaremos os dados enviados no cadastro de lojista para criar um perfil Shapper </ngb-alert>
+                                </p>
+                                <p class="alert" *ngIf="shaperForm.value['shaperSim'] > 1">
+                                    <ngb-alert type='warning' [dismissible]="false">
+                                        <mat-icon>surfing</mat-icon>
+                                        &nbsp; Não se esqueça de cadastrar os Shappers
+
+                                    </ngb-alert>
+                                </p>
+                            </div>
+                            <div *ngIf=" (shaperForm.value['shaperSim']>1)">
+                                <h4>Cadastrar Shapper</h4>
+                                <div class="form-loja">
+                                    <mat-form-field class="form-full-width" appearance="outline">
+                                        <mat-label>Nome do(a) Shapper</mat-label>
+                                        <input class="inputLogin" matInput type="text" formControlName="nomeShapper" title="Insira o seu email">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-loja">
+                                    <mat-form-field class="form-full-width" appearance="outline">
+                                        <mat-label>Email do(a) shapper</mat-label>
+                                        <input class="inputLogin" matInput type="email" formControlName="emailShapper" title="Insira o seu email">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-loja">
+                                    <mat-form-field class="form-full-width" appearance="outline">
+                                        <mat-label>Data Nascimento</mat-label>
+                                        <input class="inputLogin" matInput type="text" formControlName="dataNascimento" title="Insira o seu email" mask="00/00/0000">
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="form-loja">
+                                    <mat-form-field class="form-full-width" appearance="outline">
+                                        <mat-label>Telefone Shapper</mat-label>
+                                        <input class="inputLogin" matInput type="text" formControlName="telefoneShaper" title="Insira o seu email" mask="(00) 0000 - 0000 || (00) 0.0000-0000">
+                                    </mat-form-field>
+
+                                </div>
+                            </div>
+
+                        </form>
+                        <button *ngIf="shaperForm.value['shaperSim']>1" mat-flat-button class="button" type="submit" (click)="onSubmitShaper()">Cadastrar Shapper</button>
+                        <button *ngIf="shaperForm.value['shaperSim']<2" mat-flat-button class="button" type="submit" (click)="goToResume()">Finalizar</button>
+
+                    </div>
+                    <div class="listaShaper" *ngIf="shapper !='' ">
+                        <h4>Lista de shappers cadastrado</h4>
+                        <ul class="listNone" *ngFor="let shaperx of shapper">
+                            <li>{{shaperx.nomeShapper}}</li>
+                        </ul>
+                        <button mat-flat-button class="button" type="submit" (click)="goToResume()">Finalizar</button>
+
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab [label]="tabs[2]">
+                <div class="resumo">
+                    <h4>Por gentileza confirme os dados antes de enviar</h4>
+                    <div class="propietario">
+                        <ul>
+                            <li>Nome de Usuário: {{lojaForm.value['nmUsuario']}}</li>
+
+                            <li>logo da Empresa <br> <img class="img-thumbnail" src="{{localURl}}" alt="Não informado">
+                            </li>
+                            <li>Nome do Responsável: {{lojaForm.value['nomePropietario']}}</li>
+                            <li>Email do Responsável: {{lojaForm.value['emailProrietario']}}</li>
+                            <li>CPF Responsável: {{lojaForm.value['CPF']}}</li>
+                            <li>Telefone Responsável: {{lojaForm.value['CPF']}}</li>
+                            <li>Nome Comercial: {{lojaForm.value['nomeComercial']}}</li>
+                            <li>CNPJ: {{lojaForm.value['CNPJ']}}</li>
+                            <li>Nome Fantasia: {{lojaForm.value['nomeFantasia']}}</li>
+                            <li>Email Comercial: {{lojaForm.value['emailComercial']}}</li>
+                        </ul>
+                        <hr>
+
+                        <ul>
+                            <li>Endereço: {{lojaForm.value['logradouro']}}, {{lojaForm.value['numeroResidencia']}}</li>
+                            <li>Complemento: {{lojaForm.value['complementoResidencia']}}</li>
+                            <li>{{lojaForm.value['bairro']}} - {{lojaForm.value['cidade']}} - {{lojaForm.value['estado']}}</li>
+                            <li>CEP: {{lojaForm.value['CEP']}}</li>
+                        </ul>
+
+                    </div>
+                    <div class="shapers">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Data de Nascimento</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">excluir</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let shappers of shapper; index as i">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>
+
+                                        {{ shappers.nomeShapper }}
+                                    </td>
+                                    <td>{{ shappers.emailShapper }}</td>
+                                    <td>{{shappers.dataNascimento | mask:"00/00/0000"}}</td>
+
+                                    <td>{{ shappers.telefoneShaper | mask:"(00) 0.0000-0000"}}</td>
+                                    <td><button mat-flat-button class="button" (click)="delShapper(i)">Apagar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button mat-flat-button class="button" type="submit">Pagamento</button>
+
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+    <div class="col-sm-12 col-lg"></div>
+</div>

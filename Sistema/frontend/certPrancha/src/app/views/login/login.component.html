@@ -1,0 +1,30 @@
+<div class="row ">
+    <div class="col-sm-12 col-lg"></div>
+    <div class="col-sm-12 col-lg-8 corpoLogin">
+
+        <div class="card">
+            <div class="card-header">
+                <p class="titulo-login">Bem Vindo ao CertPrancha</p>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="loginForm" #loginFormDirective="ngForm" class="login-form">
+                    <div class="flex-login">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Nome</mat-label>
+                            <input class="inputLogin" matInput type="text" formControlName="nome" title="Insira o seu email">
+                        </mat-form-field>
+                    </div>
+                    <div class="flex-login">
+                        <mat-form-field class="form-full-width" appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input class="input-text" matInput type="password" formControlName="pswd" title="Sua senha">
+                        </mat-form-field>
+                    </div>
+                    <button mat-flat-button class="button" type="submit" (click)="onSubmit()">Login</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg"></div>
+</div>

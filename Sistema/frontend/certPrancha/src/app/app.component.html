@@ -1,5 +1,33 @@
-<app-nav></app-nav>
-<div class="corpoPrincipal">
+<div class="nav">
+    <div class="nome">
+        <h1 routerLink="/">CertPrancha</h1>
+    </div>
+    <div class="logo">
+        <img class="img-fluid" src="../assets/img/logoPrancha.png" alt="logo CertPrancha">
+    </div>
+    <button class="btnMenu" [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+</button>
+</div>
+<div class="corpo">
     <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+<div class="footer">
+    <p>Desenvolvido pela <a href="https://sites.achei.digital" target="_blank">Achei Digital     <mat-icon>copyright</mat-icon>
+    </a></p>
+</div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+    <button mat-menu-item routerLink="login">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </button>
+    <button mat-menu-item routerLink="shappers">
+    <mat-icon>surfing</mat-icon>
+    <span>Shappers</span>
+  </button>
+</mat-menu>
